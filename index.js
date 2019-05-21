@@ -24,6 +24,15 @@ const petsData = [
 
 document.getElementById("app").innerHTML = `
 <h1 class="app-title">Pets (${petsData.length} results)</h1>
+${petsData.map(function(pet){
+  return `
+  <div class="animal">
+  <img class="pet-photo" src="${pet.photo}">
+  <h2 class="pet-name">${pet.name} <span class="species">(${pet.species})</span></h2>
+  </div>
+  `
+}).join(' ')}
+<p class="footer">${petsData.length} pets were added recently.</p>
 `
 
 
